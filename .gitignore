@@ -141,3 +141,7 @@ cython_debug/
 # Models
 models/
 *.tflite
+
+# Local video
+img/
+*.mp4

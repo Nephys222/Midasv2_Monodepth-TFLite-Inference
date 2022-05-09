@@ -22,7 +22,7 @@ class midasDepthEstimator():
 
 
 	def initializeModel(self):
-		modelPath = 'models\model_float16_quant.tflite'
+		modelPath = 'models\sc_depth_v2_nyu_480x640_float32.tflite'
 
 		# Download model fif not available already
 		if not os.path.isfile(modelPath):

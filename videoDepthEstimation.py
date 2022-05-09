@@ -3,16 +3,16 @@ import pafy
 import numpy as np
 from MidasDepthEstimation.midasDepthEstimator import midasDepthEstimator
 
-# videoUrl = 'https://youtu.be/TGadVbd-C-E'
-# videoPafy = pafy.new(videoUrl)
+videoUrl = 'https://youtu.be/TGadVbd-C-E'
+videoPafy = pafy.new(videoUrl)
 
 # Initialize depth estimation model
 depthEstimator = midasDepthEstimator()
 
 # Initialize video
-cap = cv2.VideoCapture("img/Guinea.mp4")
-# print(videoPafy.streams)
-# cap = cv2.VideoCapture(videoPafy.streams[-1].url)
+# cap = cv2.VideoCapture("img/Guinea.mp4")
+print(videoPafy.streams)
+cap = cv2.VideoCapture(videoPafy.streams[-1].url)
 cv2.namedWindow("Depth Image", cv2.WINDOW_NORMAL) 	
 
 while cap.isOpened():

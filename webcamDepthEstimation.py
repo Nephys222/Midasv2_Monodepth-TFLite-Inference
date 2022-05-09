@@ -20,7 +20,7 @@ while True:
 	# Inference FPS
 	cv2.putText(img,
 			"FPS : " + '{}'.format(depthEstimator.fps) + 
-			" & Elapsed time : " + '{:.2f}'.format(depthEstimator.elapsed), 
+			" & Elapsed time : " + '{:.2f}'.format(depthEstimator.elapsed) + 'ms', 
 			(10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), 2,
 			cv2.LINE_AA)
 
