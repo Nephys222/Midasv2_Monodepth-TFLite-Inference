@@ -1,7 +1,5 @@
-# Midas v2.1 small TFLite Inference
- Python scripts to perform monocular depth estimation using Python with the Midas v2.1 small Tensorflow Lite model. Tested on Windows 10, Tensorflow 2.4.0 (Python 3.8).
-
-![!Midas v2.1 small TFLite Inference](https://github.com/ibaiGorordo/Midasv2_1_small-TFLite-Inference/blob/main/doc/img/output.jpg)
+# Midas v2.1 & other Monocular Depth TFLite Inference
+ Python scripts to perform monocular depth estimation using Python with the Midas v2.1 small Tensorflow Lite model. Tested on Windows 10, Tensorflow 2.8.0 (Python 3.7).
 
 # Requirements
 
@@ -40,7 +38,6 @@ pip install pafy youtube-dl
  ```
  
  # [Inference video Example](https://youtu.be/e161_lZps9c)
- ![!Midas v2.1 small TFLite Inference on video](https://github.com/ibaiGorordo/Midasv2_1_small-TFLite-Inference/blob/main/doc/img/Midasv2_1_small-TFLite-InferenceVideo.gif)
  
  Original video: https://youtu.be/TGadVbd-C-E (by Nagasaki Biopark)
  
