@@ -17,6 +17,13 @@ while True:
 	# Estimate depth
 	colorDepth = depthEstimator.estimateDepth(img)
 
+	# Inference FPS
+	cv2.putText(img,
+			"FPS : " + '{}'.format(depthEstimator.fps) + 
+			" & Elapsed time : " + '{:.2f}'.format(depthEstimator.elapsed), 
+			(10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), 2,
+			cv2.LINE_AA)
+
 	# Add the depth image over the color image:
 	combinedImg = cv2.addWeighted(img,0.7,colorDepth,0.6,0)
 

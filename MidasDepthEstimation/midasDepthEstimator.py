@@ -15,18 +15,19 @@ class midasDepthEstimator():
 		self.fps = 0
 		self.timeLastPrediction = time.time()
 		self.frameCounter = 0
+		self.elapsed = 0
 
 		# Initialize model
 		self.initializeModel()
 
 
 	def initializeModel(self):
-		modelPath = 'models/midasModel.tflite'
+		modelPath = 'models\model_float16_quant.tflite'
 
 		# Download model fif not available already
 		if not os.path.isfile(modelPath):
-		 	url = 'https://tfhub.dev/intel/lite-model/midas/v2_1_small/1/lite/1?lite-format=tflite'
-		 	urllib.request.urlretrieve(url, modelPath)
+			url = 'https://tfhub.dev/intel/lite-model/midas/v2_1_small/1/lite/1?lite-format=tflite'
+			urllib.request.urlretrieve(url, modelPath)
 
 		self.interpreter = Interpreter(model_path=modelPath)
 		self.interpreter.allocate_tensors()
@@ -115,6 +116,7 @@ class midasDepthEstimator():
 		if self.frameCounter == updateRate:
 			timeNow = time.time()
 			ellapsedTime = timeNow - self.timeLastPrediction
+			self.elapsed = ellapsedTime
 
 			self.fps = int(updateRate/ellapsedTime)
 			self.frameCounter = 0
@@ -149,4 +151,4 @@ if __name__ == '__main__':
 
 	camera.release()
 	cv2.destroyAllWindows()
-
+	
